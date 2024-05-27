@@ -1,6 +1,5 @@
 package dados;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Midiateca {
@@ -22,11 +21,21 @@ public class Midiateca {
         return null;
     }
     public ArrayList<Midia> consultaPorCategoria(Categoria categoria){
-
-        return null;
+        ArrayList<Midia> midiasPorCat =new ArrayList<>();
+        for (Midia midia: midias){
+            if (midia.getCategoria()== categoria){
+                midiasPorCat.add(midia);
+            }
+        }
+        return midiasPorCat;
     }
     public boolean removeMidia(int codigo){
-
+        for (Midia midia: midias){
+            if (midia.getCodigo()==codigo){
+                midias.remove(midia);
+                return true;
+            }
+        }
         return false;
     }
 }
