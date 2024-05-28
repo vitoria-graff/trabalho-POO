@@ -38,4 +38,36 @@ public class Midiateca {
         }
         return false;
     }
+
+    /**
+     * @see dados.Iterador#reset()
+     */
+    public void reset() {
+        contador = 0;
+    }
+
+
+    /**
+     * @see dados.Iterador#hasNext()
+     */
+    public boolean hasNext() {
+        if(contador>= midias.size())
+            return false;
+        return true;
+    }
+
+
+    /**
+     * @see dados.Iterador#next()
+     */
+    public Object next() {
+        if(contador< midias.size()) {
+            Object retorno = midias.get(contador);
+            contador++;
+            return retorno;
+        }
+        return null;
+    }
+
+
 }

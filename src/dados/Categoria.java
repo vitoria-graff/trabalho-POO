@@ -12,22 +12,4 @@ public enum Categoria {
     public String getNome() {
         return nome;
     }
-    public static Categoria categoriaString(String nome) {
-        if (nome.equals("Acao")) {
-            return ACA;
-        }
-        else if (nome.equals("Drama")) {
-            return DRA;
-        }
-        else if (nome.equals("Ficcao")) {
-            return FIC;
-        }
-        else if (nome.equals("Romance")){
-            return ROM;
-        }
-        else {
-            return null;}
-
-    }
-
 }
