@@ -26,4 +26,9 @@ public abstract class Midia {
         return categoria;
         }
         public abstract double calculaLocacao();
+
+    @Override
+    public String toString() {
+        return codigo+","+titulo+","+ano+ ","+ categoria.getNome()+ ",";
+    }
 }

@@ -1,9 +1,6 @@
 package app;
 
-import dados.Categoria;
-import dados.Midia;
-import dados.Midiateca;
-import dados.Video;
+import dados.*;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -63,9 +60,34 @@ public class ACMEMidia {
         }
     }
     public void cadastrarMusica(){
+        while(true){
+            int codigo= Integer.parseInt(entrada.nextLine());
+            if(codigo== -1)
+                break;
+            String titulo= entrada.nextLine();
+            int ano= Integer.parseInt(entrada.nextLine());
+            Categoria categoria = Categoria.valueOf(entrada.nextLine());
+            double duracao = Double.parseDouble(entrada.nextLine());
+            if(midiateca.consultaPorCodigo(codigo)== null){
+                Midia midia = new Musica(codigo,titulo,ano,categoria,duracao);
+                midiateca.cadastraMidia(midia);
+                System.out.println("1:" + codigo +","+titulo+","+ano+","+categoria.getNome()+","+duracao);
+            }
+            else {
+                System.out.println("2:Erro-musica com codigo repetido: " + codigo);
 
+            }
+        }
     }
     public void mostrarDadosMidia(){
+        int codigo = Integer.parseInt(entrada.nextLine());
+        Midia midia = midiateca.consultaPorCodigo(codigo);
+        if (midia != null) {
+            System.out.println("3:" + midia.toString());
+        }
+        else {
+            System.out.println("3:Código inexistente");
+        }
 
     }
     public void mostrarDadosMidiaPorCategoria(){

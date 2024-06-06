@@ -13,19 +13,21 @@ public class Musica extends Midia{
 
     @Override
     public double calculaLocacao() {
-        double preco =0;
-        if (categoria == Categoria.ACA){
-            preco =duracao* 0.90;
-        }
-        else if (categoria == Categoria.DRA){
-            preco = duracao* 0.70;
-        }
-        else if (categoria == Categoria.FIC){
-            preco = duracao* 0.50;
-        }
-        else if (categoria== Categoria.ROM){
-            preco = duracao*0.30;
+        double preco = 0;
+        if (getCategoria() == Categoria.ACA) {
+            preco = duracao * 0.90;
+        } else if (getCategoria()== Categoria.DRA) {
+            preco = duracao * 0.70;
+        } else if (getCategoria() == Categoria.FIC) {
+            preco = duracao * 0.50;
+        } else if (getCategoria() == Categoria.ROM) {
+            preco = duracao * 0.30;
         }
         return preco;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +String.format("%.2f",duracao)+ ","+String.format("%.2f",calculaLocacao());
     }
 }
