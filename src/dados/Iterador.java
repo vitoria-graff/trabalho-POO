@@ -1,12 +1,12 @@
 package dados;
 
-public abstract interface Iterador {
+public interface Iterador {
 
-    public abstract void reset();
+    void reset();
 
-    public abstract boolean hasNext();
+    boolean hasNext();
 
-    public abstract Object next();
+    Object next();
 
 }
 

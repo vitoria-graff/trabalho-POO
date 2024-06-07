@@ -1,10 +1,10 @@
 package dados;
 
 public abstract class Midia {
-    private int codigo;
-    private String titulo;
-    private int ano;
-    private Categoria categoria;
+    private final int codigo;
+    private final String titulo;
+    private final int ano;
+    private final Categoria categoria;
     public Midia(int codigo, String titulo, int ano, Categoria categoria) {
         this.codigo = codigo;
         this.titulo = titulo;

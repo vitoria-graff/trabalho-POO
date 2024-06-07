@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Midiateca {
     private int contador;
-    private ArrayList<Midia>midias;
+    private final ArrayList<Midia>midias;
     public Midiateca(){
         contador=0;
         midias=new ArrayList<>();
@@ -51,9 +51,7 @@ public class Midiateca {
      * @see dados.Iterador#hasNext()
      */
     public boolean hasNext() {
-        if(contador>= midias.size())
-            return false;
-        return true;
+        return contador < midias.size();
     }
 
 
@@ -70,4 +68,7 @@ public class Midiateca {
     }
 
 
+    public ArrayList<Midia> getMidias() {
+        return midias;
+    }
 }

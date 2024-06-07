@@ -5,8 +5,8 @@ public enum Categoria {
     DRA("Drama"),
     FIC("Ficcao"),
     ROM("Romance");
-    private String nome;
-    private Categoria(String nome){
+    private final String nome;
+    Categoria(String nome){
         this.nome=nome;
     }
     public String getNome() {
